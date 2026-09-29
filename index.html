@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>ふるさと納税 上限額シミュレーター｜住宅ローン控除対応【2026年版】</title>
+    <meta
+      name="description"
+      content="ふるさと納税の控除上限額を、住宅ローン控除・ワンストップ特例／確定申告の違いまで反映して計算する無料シミュレーター。2026年（令和8年）の基礎控除104万円などの税制改正に対応。入力内容はどこにも送信されません。"
+    />
+    <link rel="canonical" href="https://fukicycle.github.io/furusato/" />
+    <meta name="theme-color" content="#eef2ff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="ふるさと納税 上限額シミュレーター" />
+    <meta property="og:title" content="ふるさと納税 上限額シミュレーター｜住宅ローン控除対応【2026年版】" />
+    <meta
+      property="og:description"
+      content="住宅ローン控除があると、ふるさと納税の上限はどう変わる？ ワンストップ特例と確定申告の実質負担を比較して、損しない寄附額がわかります。"
+    />
+    <meta property="og:url" content="https://fukicycle.github.io/furusato/" />
+    <meta property="og:image" content="https://fukicycle.github.io/furusato/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ふるさと納税 上限額シミュレーター",
+        "url": "https://fukicycle.github.io/furusato/",
+        "description": "住宅ローン控除・ワンストップ特例／確定申告の違いまで反映して、ふるさと納税の控除上限額と実質負担を計算する無料ツール（2026年分対応）。",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "住宅ローン控除を受けていると、ふるさと納税の上限額は下がりますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ワンストップ特例なら、上限額は住宅ローン控除がない場合とほぼ同じです。上限の基準になる住民税所得割の20%は、住宅ローン控除を差し引く前の金額で計算されるためです。ただし確定申告をすると、寄附金控除で所得税が減るぶん住宅ローン控除が所得税から引ききれなくなり、住民税での控除限度（課税所得の5%、最大9.75万円）を超えた分が消えて、実質負担が2,000円を超えることがあります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ワンストップ特例と確定申告では、どちらが得ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "住宅ローン控除がない場合、上限内の寄附ならどちらでも実質負担はほぼ2,000円です。住宅ローン控除を所得税から引ききれていない人は、ワンストップ特例のほうが有利になることがあります。ただし住宅ローン控除の1年目や医療費控除を受ける年は確定申告が必要で、ワンストップ特例は使えません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "2026年（令和8年）の税制改正でふるさと納税の上限は変わりましたか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "2026年分は所得税の基礎控除が最大104万円に引き上げられ、所得税率が下がる人がいます。住民税の特例分の割合は所得税率で決まるため、上限額がわずかに下がる場合があります。また2027年1月以降の寄附からは、住民税の特例分に193万円の定額上限が設けられます（給与収入1億円相当以上の人が対象）。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "入力した年収などの情報はどこかに送信されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "送信されません。計算はすべてお使いのブラウザの中で行われ、入力内容は保存も送信もされません。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="blob blob-4"></span>
+    </div>
+
+    <a class="skip-link" href="#simulator">シミュレーターへ移動</a>
+
+    <header class="site-header">
+      <div class="container">
+        <p class="eyebrow">2026年（令和8年）の寄附に対応</p>
+        <h1>ふるさと納税<br class="br-sp" />上限額シミュレーター</h1>
+        <p class="lead">
+          住宅ローン控除がある人でも損しない寄附額を、<strong>ワンストップ特例</strong>と<strong>確定申告</strong>の両方で計算します。
+        </p>
+        <ul class="chips" aria-label="特長">
+          <li class="chip">無料・登録不要</li>
+          <li class="chip">住宅ローン控除に対応</li>
+          <li class="chip">入力内容は送信されません</li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="simulator" class="container sim" aria-labelledby="sim-title">
+        <h2 id="sim-title" class="visually-hidden">シミュレーター</h2>
+
+        <form id="sim-form" class="glass form-card" novalidate autocomplete="off">
+          <fieldset class="group">
+            <legend class="group-title"><span class="step" aria-hidden="true">1</span>収入</legend>
+
+            <div class="field">
+              <label for="salary">給与収入（年収・額面）</label>
+              <div class="input-wrap">
+                <input id="salary" name="salary" class="money" type="text" inputmode="numeric" value="5,000,000" aria-describedby="salary-hint" />
+                <span class="unit">円</span>
+              </div>
+              <p id="salary-hint" class="hint">源泉徴収票の「支払金額」。今年の見込み額でOK <span class="man" data-man-for="salary"></span></p>
+            </div>
+
+            <div class="field">
+              <div class="label-row">
+                <label for="social">社会保険料</label>
+                <label class="switch">
+                  <input id="social-auto" type="checkbox" checked />
+                  <span class="switch-track" aria-hidden="true"></span>
+                  <span class="switch-label">自動で推定</span>
+                </label>
+              </div>
+              <div class="input-wrap">
+                <input id="social" name="social" class="money" type="text" inputmode="numeric" value="" disabled aria-describedby="social-hint" />
+                <span class="unit">円</span>
+              </div>
+              <p id="social-hint" class="hint">源泉徴収票の「社会保険料等の金額」。自動の場合は年収の15%で推定します</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend class="group-title"><span class="step" aria-hidden="true">2</span>家族</legend>
+
+            <div class="field">
+              <span class="label" id="spouse-label">配偶者</span>
+              <div class="segmented" role="radiogroup" aria-labelledby="spouse-label">
+                <label><input type="radio" name="spouse" value="none" checked /><span>いない</span></label>
+                <label><input type="radio" name="spouse" value="has" /><span>いる</span></label>
+              </div>
+            </div>
+
+            <div class="field reveal" data-show-when="spouse=has" hidden>
+              <label for="spouse-salary">配偶者の給与収入</label>
+              <div class="input-wrap">
+                <input id="spouse-salary" class="money" type="text" inputmode="numeric" value="0" aria-describedby="spouse-hint" />
+                <span class="unit">円</span>
+              </div>
+              <p id="spouse-hint" class="hint">136万円以下なら配偶者控除、136万円超〜約207万円なら配偶者特別控除が自動で反映されます</p>
+              <label class="check"><input id="spouse-elderly" type="checkbox" /><span>配偶者は70歳以上</span></label>
+            </div>
+
+            <div class="field">
+              <span class="label">扶養している親族</span>
+              <div class="steppers">
+                <div class="stepper" data-stepper="dep-general">
+                  <span class="stepper-label">16〜18歳・23〜69歳</span>
+                  <div class="stepper-ctrl">
+                    <button type="button" data-dec aria-label="16〜18歳・23〜69歳の人数を減らす">−</button>
+                    <output id="dep-general" aria-live="polite">0</output>
+                    <button type="button" data-inc aria-label="16〜18歳・23〜69歳の人数を増やす">＋</button>
+                  </div>
+                </div>
+                <div class="stepper" data-stepper="dep-specific">
+                  <span class="stepper-label">19〜22歳（大学生など）</span>
+                  <div class="stepper-ctrl">
+                    <button type="button" data-dec aria-label="19〜22歳の人数を減らす">−</button>
+                    <output id="dep-specific" aria-live="polite">0</output>
+                    <button type="button" data-inc aria-label="19〜22歳の人数を増やす">＋</button>
+                  </div>
+                </div>
+                <div class="stepper" data-stepper="dep-elderly">
+                  <span class="stepper-label">70歳以上（別居など）</span>
+                  <div class="stepper-ctrl">
+                    <button type="button" data-dec aria-label="70歳以上の人数を減らす">−</button>
+                    <output id="dep-elderly" aria-live="polite">0</output>
+                    <button type="button" data-inc aria-label="70歳以上の人数を増やす">＋</button>
+                  </div>
+                </div>
+                <div class="stepper" data-stepper="dep-elderly-together">
+                  <span class="stepper-label">70歳以上の同居の親</span>
+                  <div class="stepper-ctrl">
+                    <button type="button" data-dec aria-label="70歳以上の同居の親の人数を減らす">−</button>
+                    <output id="dep-elderly-together" aria-live="polite">0</output>
+                    <button type="button" data-inc aria-label="70歳以上の同居の親の人数を増やす">＋</button>
+                  </div>
+                </div>
+              </div>
+              <p class="hint">15歳以下の子どもは扶養控除がないため入力不要です</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend class="group-title"><span class="step" aria-hidden="true">3</span>住宅ローン控除</legend>
+
+            <div class="field">
+              <span class="label" id="loan-label">住宅ローン控除を受けている</span>
+              <div class="segmented" role="radiogroup" aria-labelledby="loan-label">
+                <label><input type="radio" name="loan" value="none" checked /><span>いいえ</span></label>
+                <label><input type="radio" name="loan" value="has" /><span>はい</span></label>
+              </div>
+            </div>
+
+            <div class="reveal" data-show-when="loan=has" hidden>
+              <div class="field">
+                <label for="loan-amount">年間の控除可能額</label>
+                <div class="input-wrap">
+                  <input id="loan-amount" class="money" type="text" inputmode="numeric" value="200,000" aria-describedby="loan-hint" />
+                  <span class="unit">円</span>
+                </div>
+                <p id="loan-hint" class="hint">
+                  源泉徴収票の「住宅借入金等特別控除可能額」。わからなければ下で年末残高から概算できます
+                </p>
+                <details class="mini">
+                  <summary>年末残高から概算する</summary>
+                  <div class="mini-body">
+                    <div class="field">
+                      <label for="loan-balance">年末のローン残高</label>
+                      <div class="input-wrap">
+                        <input id="loan-balance" class="money" type="text" inputmode="numeric" value="" />
+                        <span class="unit">円</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label for="loan-rate">控除率</label>
+                      <select id="loan-rate">
+                        <option value="0.007" selected>0.7%（2022年以降の入居）</option>
+                        <option value="0.01">1%（2021年までの入居）</option>
+                      </select>
+                    </div>
+                    <button type="button" id="loan-apply" class="btn-secondary">控除可能額に反映</button>
+                    <p class="hint">住宅の種類ごとの借入限度額（例: 省エネ基準適合住宅 3,000万円）を超える残高は対象外です</p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="field">
+                <label for="loan-period">入居した時期</label>
+                <select id="loan-period" aria-describedby="loan-period-hint">
+                  <option value="from2022" selected>2022年1月以降</option>
+                  <option value="from2014to2021">2014年4月〜2021年12月</option>
+                </select>
+                <p id="loan-period-hint" class="hint">住民税から控除できる上限が変わります（2022年以降: 課税所得の5%・最大9.75万円）</p>
+              </div>
+
+              <label class="check"><input id="loan-first" type="checkbox" /><span>今年が控除の1年目（確定申告が必要）</span></label>
+            </div>
+          </fieldset>
+
+          <details class="group group-details">
+            <summary class="group-title"><span class="step" aria-hidden="true">4</span>その他の控除<span class="optional">任意</span></summary>
+            <div class="group-body">
+              <div class="field">
+                <label for="ideco">iDeCo・小規模企業共済の掛金（年額）</label>
+                <div class="input-wrap">
+                  <input id="ideco" class="money" type="text" inputmode="numeric" value="0" />
+                  <span class="unit">円</span>
+                </div>
+              </div>
+              <div class="field">
+                <span class="label">生命保険料の支払額（年額・新制度）</span>
+                <div class="grid-3">
+                  <div>
+                    <label for="life-general" class="sub-label">一般</label>
+                    <div class="input-wrap"><input id="life-general" class="money" type="text" inputmode="numeric" value="0" /><span class="unit">円</span></div>
+                  </div>
+                  <div>
+                    <label for="life-care" class="sub-label">介護医療</label>
+                    <div class="input-wrap"><input id="life-care" class="money" type="text" inputmode="numeric" value="0" /><span class="unit">円</span></div>
+                  </div>
+                  <div>
+                    <label for="life-pension" class="sub-label">個人年金</label>
+                    <div class="input-wrap"><input id="life-pension" class="money" type="text" inputmode="numeric" value="0" /><span class="unit">円</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="quake">地震保険料の支払額（年額）</label>
+                <div class="input-wrap">
+                  <input id="quake" class="money" type="text" inputmode="numeric" value="0" />
+                  <span class="unit">円</span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="medical">医療費控除の額</label>
+                <div class="input-wrap">
+                  <input id="medical" class="money" type="text" inputmode="numeric" value="0" aria-describedby="medical-hint" />
+                  <span class="unit">円</span>
+                </div>
+                <p id="medical-hint" class="hint">（支払った医療費 − 保険金などの補填 − 10万円）。入力すると確定申告のみの計算になります</p>
+              </div>
+            </div>
+          </details>
+
+          <fieldset class="group">
+            <legend class="group-title"><span class="step" aria-hidden="true">5</span>寄附予定額<span class="optional">任意</span></legend>
+            <div class="field">
+              <label for="planned">寄附する予定の合計額</label>
+              <div class="input-wrap">
+                <input id="planned" class="money" type="text" inputmode="numeric" value="" placeholder="空欄なら上限目安で計算" />
+                <span class="unit">円</span>
+              </div>
+              <p class="hint">入力すると、その金額での実質負担と内訳を表示します</p>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="results" id="results">
+          <section class="glass result-card" aria-labelledby="result-title">
+            <h2 id="result-title" class="card-title">あなたの上限目安</h2>
+            <div class="methods" id="methods" aria-live="polite">
+              <noscript><p>このシミュレーターの計算には JavaScript を有効にしてください。</p></noscript>
+            </div>
+            <div id="advice" class="advice" aria-live="polite"></div>
+          </section>
+
+          <section class="glass chart-card" aria-labelledby="chart-title">
+            <h2 id="chart-title" class="card-title">寄附額と実質負担</h2>
+            <p class="card-sub">2,000円のラインを超えると、寄附額のうち戻ってこない部分が増えていきます</p>
+            <div id="chart" class="chart"></div>
+          </section>
+
+          <section class="glass detail-card" aria-labelledby="detail-title">
+            <h2 id="detail-title" class="card-title">控除の内訳</h2>
+            <div class="segmented segmented-sm" role="radiogroup" aria-label="内訳を表示する申告方法" id="detail-method">
+              <label><input type="radio" name="detail-method" value="oneStop" checked /><span>ワンストップ特例</span></label>
+              <label><input type="radio" name="detail-method" value="taxReturn" /><span>確定申告</span></label>
+            </div>
+            <div id="detail"></div>
+          </section>
+        </div>
+      </section>
+
+      <div class="sticky-bar glass" id="sticky-bar" aria-hidden="true">
+        <div>
+          <span class="sticky-label">上限目安</span>
+          <strong class="sticky-value" id="sticky-value">—</strong>
+        </div>
+        <a href="#results" class="sticky-link" tabindex="-1">結果を見る</a>
+      </div>
+
+      <article class="container article" aria-labelledby="guide-title">
+        <div class="glass prose">
+          <h2 id="guide-title">ふるさと納税の上限額のしくみ</h2>
+          <p>
+            ふるさと納税は、寄附額から<strong>自己負担2,000円</strong>を除いた金額が所得税と住民税から控除される制度です。
+            ただし控除には上限があり、超えた分は自己負担になります。この上限を一般に「控除上限額」と呼びます。
+          </p>
+
+          <h3>控除額の計算式</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th scope="col">区分</th><th scope="col">控除額</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">所得税</th><td>（寄附額 − 2,000円）× 所得税率 × 1.021</td></tr>
+                <tr><th scope="row">住民税 基本分</th><td>（寄附額 − 2,000円）× 10%</td></tr>
+                <tr><th scope="row">住民税 特例分</th><td>（寄附額 − 2,000円）×（90% − 所得税率 × 1.021）</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            住民税の特例分には<strong>「住民税所得割額の20%」</strong>という上限があります。特例分がこの上限に達する寄附額が、実質負担2,000円で済む上限額です。
+            なお特例分の所得税率は、住民税の課税所得から人的控除の差額と「所得税の基礎控除 − 48万円」を差し引いた金額で判定します（2025年分以後）。
+          </p>
+
+          <h3 id="housing-loan">住宅ローン控除があると上限額はどう変わる？</h3>
+          <p>
+            上限の基準になる「住民税所得割額の20%」は、住宅ローン控除を差し引く<strong>前</strong>の所得割で計算します。
+            そのため、住宅ローン控除があるだけで上限額そのものが下がるわけではありません。
+          </p>
+          <p>注意が必要なのは、<strong>確定申告</strong>でふるさと納税をする場合です。</p>
+          <ol>
+            <li>住宅ローン控除は、まず所得税から差し引かれます。</li>
+            <li>所得税から引ききれない分は住民税から差し引かれますが、上限があります（2022年以降の入居なら所得税の課税所得の5%、最大9.75万円）。</li>
+            <li>確定申告をすると、寄附金控除で所得税と課税所得が減ります。その結果、住宅ローン控除を所得税から引ききれない額が増え、住民税での上限も下がります。</li>
+            <li>住民税の上限を超えた住宅ローン控除は消えてしまい、その分だけ実質負担が2,000円より増えます。</li>
+          </ol>
+          <p>
+            <strong>ワンストップ特例</strong>なら、所得税の分も住民税からまとめて控除されるので所得税には影響せず、住宅ローン控除は減りません。
+            住宅ローン控除を所得税から引ききれていない人は、ワンストップ特例を使うほうが有利になります。
+          </p>
+          <p class="note">
+            例: 年収500万円・独身・住宅ローン控除の控除可能額25万円の場合、上限目安は約5.7万円です。ワンストップ特例なら実質負担は2,000円ですが、確定申告だと住宅ローン控除が目減りして実質負担が約7,500円になります（このシミュレーターの計算）。
+          </p>
+
+          <h3>ワンストップ特例と確定申告の違い</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th scope="col"></th><th scope="col">ワンストップ特例</th><th scope="col">確定申告</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">使える人</th><td>確定申告が不要な給与所得者などで、寄附先が年間5自治体以内</td><td>誰でも</td></tr>
+                <tr><th scope="row">手続き</th><td>寄附ごとに申請書を翌年1月10日必着で提出（オンライン申請も可）</td><td>翌年3月15日までに確定申告</td></tr>
+                <tr><th scope="row">控除のされ方</th><td>全額を翌年度の住民税から控除</td><td>所得税の還付＋翌年度の住民税から控除</td></tr>
+                <tr><th scope="row">使えない場合</th><td>住宅ローン控除の1年目、医療費控除を受ける年、年収2,000万円超など</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>2026年（令和8年）の主な変更点</h3>
+          <ul>
+            <li>所得税の基礎控除が引き上げ（合計所得489万円以下は104万円）。給与所得控除の最低額も74万円に。所得税率が下がる人は、住民税特例分の割合が上がる代わりに上限額がわずかに下がることがあります。</li>
+            <li>2026年10月から返礼品の地場産品基準が厳格化され、自治体の経費上限も段階的に引き下げ（2029年10月に4割）。</li>
+            <li>2027年1月以降の寄附から、住民税の特例分に193万円の定額上限（給与収入1億円相当以上の人が対象）。</li>
+          </ul>
+
+          <h3 id="faq">よくある質問</h3>
+          <div class="faq">
+            <details>
+              <summary>住宅ローン控除を受けていると、ふるさと納税の上限額は下がりますか？</summary>
+              <p>
+                ワンストップ特例なら、上限額は住宅ローン控除がない場合とほぼ同じです。上限の基準になる住民税所得割の20%は、住宅ローン控除を差し引く前の金額で計算されるためです。
+                ただし確定申告をすると、寄附金控除で所得税が減るぶん住宅ローン控除が所得税から引ききれなくなり、住民税での控除限度（課税所得の5%、最大9.75万円）を超えた分が消えて、実質負担が2,000円を超えることがあります。
+              </p>
+            </details>
+            <details>
+              <summary>ワンストップ特例と確定申告では、どちらが得ですか？</summary>
+              <p>
+                住宅ローン控除がない場合、上限内の寄附ならどちらでも実質負担はほぼ2,000円です。住宅ローン控除を所得税から引ききれていない人は、ワンストップ特例のほうが有利になることがあります。
+                ただし住宅ローン控除の1年目や医療費控除を受ける年は確定申告が必要で、ワンストップ特例は使えません。
+              </p>
+            </details>
+            <details>
+              <summary>2026年（令和8年）の税制改正でふるさと納税の上限は変わりましたか？</summary>
+              <p>
+                2026年分は所得税の基礎控除が最大104万円に引き上げられ、所得税率が下がる人がいます。住民税の特例分の割合は所得税率で決まるため、上限額がわずかに下がる場合があります。
+                また2027年1月以降の寄附からは、住民税の特例分に193万円の定額上限が設けられます（給与収入1億円相当以上の人が対象）。
+              </p>
+            </details>
+            <details>
+              <summary>入力した年収などの情報はどこかに送信されますか？</summary>
+              <p>送信されません。計算はすべてお使いのブラウザの中で行われ、入力内容は保存も送信もされません。</p>
+            </details>
+          </div>
+
+          <h3>計算の前提と注意事項</h3>
+          <ul class="small">
+            <li>給与所得のみの会社員・公務員を想定しています。副業・年金・事業所得、株式の譲渡所得などがある場合は結果が変わります。</li>
+            <li>2026年（令和8年）1月〜12月の寄附を対象に、令和8年分の所得税・令和9年度の住民税の税制で計算しています。</li>
+            <li>障害者控除・ひとり親控除・寡婦控除・勤労学生控除、住民税の非課税判定、自治体独自の税率などには対応していません。</li>
+            <li>結果は目安です。実際の控除額は、お住まいの自治体の住民税決定通知などで確認してください。上限ぎりぎりではなく、少し余裕を持った寄附をおすすめします。</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="small">
+          参考:
+          <a href="https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/" rel="noopener">総務省 ふるさと納税ポータルサイト</a>・
+          <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1155.htm" rel="noopener">国税庁 No.1155 ふるさと納税</a>・
+          <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm" rel="noopener">国税庁 No.1199 基礎控除</a>・
+          <a href="https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_01.htm" rel="noopener">財務省 令和8年度税制改正の大綱</a>
+        </p>
+        <p class="small">このシミュレーターの計算結果は目安であり、実際の税額を保証するものではありません。</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
